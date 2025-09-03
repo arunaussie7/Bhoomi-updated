@@ -1,0 +1,274 @@
+🎯 RESUME ATS APPLICATION - INSTALLATION & STARTUP GUIDE
+================================================================
+
+📋 PREREQUISITES
+================
+• Python 3.7 or higher installed on your computer
+• Internet connection for downloading packages
+• Web browser (Chrome, Firefox, Safari, Edge)
+• Cohere API key (free account at https://cohere.ai)
+
+🔍 CHECKING PYTHON INSTALLATION
+===============================
+
+Step 1: Verify Python is installed
+---------------------------------
+Open Terminal/Command Prompt and type:
+  python --version
+  OR
+  python3 --version
+
+If you see a version number (3.7 or higher), Python is installed.
+If you get an error, download Python from: https://python.org
+
+Step 2: Install Python (if not installed)
+-----------------------------------------
+1. Go to https://python.org
+2. Click "Downloads"
+3. Download the latest version for your OS
+4. Run the installer
+5. IMPORTANT: Check "Add Python to PATH" during installation
+6. Restart your computer after installation
+
+🔑 GETTING YOUR COHERE API KEY
+===============================
+
+Step 1: Create Cohere Account
+-----------------------------
+1. Go to https://cohere.ai
+2. Click "Sign Up" or "Get Started"
+3. Create a free account
+4. Verify your email address
+
+Step 2: Get Your API Key
+------------------------
+1. Log in to your Cohere account
+2. Go to the "API Keys" section
+3. Click "Create API Key"
+4. Copy your API key (it looks like: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+
+Step 3: Update the API Key
+--------------------------
+After running the setup, edit the .env file:
+1. Open the .env file in your project folder
+2. Replace the existing API key with your own:
+   COHERE_API_KEY=your_actual_api_key_here
+3. Save the file
+4. Restart the application
+
+🚀 AUTOMATIC INSTALLATION (RECOMMENDED)
+=======================================
+
+METHOD 1: One-Click Startup (Easiest)
+-------------------------------------
+
+For Windows Users:
+1. Navigate to your project folder
+2. Double-click the "start_app.bat" file
+3. Wait for installation to complete
+4. The application will open automatically in your browser
+
+For Mac/Linux Users:
+1. Navigate to your project folder
+2. Double-click the "start_app.sh" file
+3. If prompted, allow execution permissions
+4. Wait for installation to complete
+5. The application will open automatically in your browser
+
+METHOD 2: Using Setup Script
+----------------------------
+1. Open Terminal/Command Prompt
+2. Navigate to your project folder:
+   cd "path/to/your/project/folder"
+3. Run the setup script:
+   python setup.py
+   OR
+   python3 setup.py
+4. Wait for installation to complete
+5. The application will start automatically
+
+🔧 MANUAL INSTALLATION (If automatic doesn't work)
+==================================================
+
+Step 1: Open Terminal/Command Prompt
+-----------------------------------
+• Windows: Press Win + R, type "cmd", press Enter
+• Mac: Press Cmd + Space, type "Terminal", press Enter
+• Linux: Press Ctrl + Alt + T
+
+Step 2: Navigate to Project Folder
+----------------------------------
+Type this command (replace with your actual path):
+  cd "C:\Users\YourName\Desktop\bhoomi-final-main"
+  OR
+  cd "/Users/YourName/Desktop/bhoomi-final-main"
+
+Step 3: Install Required Packages
+--------------------------------
+Run this command:
+  pip install -r requirements.txt
+  OR
+  python -m pip install -r requirements.txt
+  OR
+  python3 -m pip install -r requirements.txt
+
+Step 4: Create .env File
+-----------------------
+Create a file named ".env" in your project folder with:
+  COHERE_API_KEY=your_actual_api_key_here
+
+Step 5: Start the Application
+-----------------------------
+Run this command:
+  streamlit run app.py
+  OR
+  python -m streamlit run app.py
+  OR
+  python3 -m streamlit run app.py
+
+🌐 ACCESSING THE APPLICATION
+============================
+
+Once started successfully, you can access the application at:
+• Local URL: http://localhost:8501
+• Network URL: http://your-ip-address:8501
+
+The application should open automatically in your default browser.
+If it doesn't open automatically, manually navigate to http://localhost:8501
+
+📱 USING THE APPLICATION
+========================
+
+1. RESUME ANALYSIS PAGE
+-----------------------
+• Upload your PDF resume using the file uploader
+• Paste the job description in the text area
+• Click "Submit" button
+• Wait for the analysis to complete
+
+2. ANALYSIS RESULTS PAGE
+------------------------
+• View your ATS match score (percentage)
+• See missing keywords that should be added
+• Read your profile summary
+• Click "Resume Improvement Tips" button
+
+3. IMPROVEMENT TIPS PAGE
+------------------------
+• Get personalized suggestions for improvement
+• View keywords you should include
+• Click "Generate Detailed Improvement Plan"
+
+4. DETAILED IMPROVEMENT PLAN PAGE
+---------------------------------
+• Read comprehensive improvement suggestions
+• Follow the recommendations to improve your resume
+• Use the tips to enhance your ATS compatibility
+
+⏹️ STOPPING THE APPLICATION
+============================
+
+To stop the application:
+• Press Ctrl + C in the terminal/command prompt
+• Or close the terminal window
+
+⚠️ TROUBLESHOOTING
+==================
+
+PROBLEM: "Python not found" error
+---------------------------------
+SOLUTION:
+1. Download Python from https://python.org
+2. Install with "Add to PATH" option checked
+3. Restart your computer
+4. Try running the setup again
+
+PROBLEM: "pip not found" error
+------------------------------
+SOLUTION:
+Try these commands in order:
+1. python -m pip install -r requirements.txt
+2. python3 -m pip install -r requirements.txt
+3. pip3 install -r requirements.txt
+
+PROBLEM: Permission errors (Mac/Linux)
+-------------------------------------
+SOLUTION:
+1. Make the script executable: chmod +x start_app.sh
+2. Then run: ./start_app.sh
+
+PROBLEM: Browser doesn't open automatically
+------------------------------------------
+SOLUTION:
+1. Open your web browser manually
+2. Go to: http://localhost:8501
+
+PROBLEM: "Port already in use" error
+------------------------------------
+SOLUTION:
+1. Stop any other applications using port 8501
+2. Or use a different port: streamlit run app.py --server.port 8502
+
+PROBLEM: Package installation fails
+----------------------------------
+SOLUTION:
+1. Update pip: python -m pip install --upgrade pip
+2. Try installing packages one by one:
+   pip install streamlit
+   pip install PyPDF2==3.0.1
+   pip install cohere
+   pip install python-dotenv
+   pip install streamlit_extras
+
+PROBLEM: Cohere API Key issues
+------------------------------
+SOLUTION:
+1. Get your free API key from https://cohere.ai
+2. Edit the .env file in your project folder
+3. Replace the API key with your own:
+   COHERE_API_KEY=your_actual_api_key_here
+4. Save the file and restart the application
+
+PROBLEM: "API key not found" or "Invalid API key" errors
+--------------------------------------------------------
+SOLUTION:
+1. Check that the .env file exists in your project folder
+2. Verify your API key is correct in the .env file
+3. Make sure there are no extra spaces or characters
+4. Restart the application after making changes
+
+📞 SUPPORT
+===========
+
+If you encounter any issues:
+1. Check that Python 3.7+ is installed
+2. Ensure you have internet connection
+3. Verify your Cohere API key is correct
+4. Try running the manual commands
+5. Check the error messages for specific issues
+6. Contact the developer for assistance
+
+📁 PROJECT FILES
+================
+
+• app.py - Main application file
+• setup.py - Automatic setup script
+• start_app.bat - Windows startup file
+• start_app.sh - Mac/Linux startup file
+• requirements.txt - Required Python packages
+• .env - Environment variables (API keys)
+• CLIENT_INSTRUCTIONS.md - Detailed instructions
+• INSTALLATION_GUIDE.txt - This file
+
+🎉 SUCCESS!
+============
+
+Once the application is running, you should see:
+• A web page with "Resume ATS Application" title
+• File upload option for your resume
+• Text area for job description
+• Submit button to start analysis
+
+The application is now ready to help you optimize your resume for ATS systems!
+
+================================================================ 

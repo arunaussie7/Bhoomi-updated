@@ -1,0 +1,5 @@
+streamlit
+PyPDF2==3.0.1
+cohere
+python-dotenv
+streamlit_extras

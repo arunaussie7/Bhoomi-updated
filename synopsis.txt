@@ -1,0 +1,117 @@
+===============================================================================
+                           PROJECT SYNOPSIS
+                    SMART ATS RESUME ANALYZER SYSTEM
+                        Academic Year: 2024-25
+===============================================================================
+
+1. TITLE OF THE PROJECT
+=======================
+Smart ATS Resume Analyzer - An Intelligent Web-Based Resume Optimization System
+
+-------------------------------------------------------------------------------
+2. PROBLEM STATEMENT
+====================
+In the current job market, over 75% of resumes are filtered out by Applicant Tracking Systems (ATS) before reaching human recruiters. Many qualified candidates are rejected due to poor keyword optimization, lack of ATS-friendly formatting, and limited feedback on resume effectiveness. There is a lack of accessible, intelligent tools that help job seekers analyze and optimize their resumes for specific job descriptions and ATS requirements.
+
+-------------------------------------------------------------------------------
+3. OBJECTIVE AND SCOPE OF THE PROJECT
+=====================================
+
+Objectives:
+- To develop a web-based system that analyzes resumes for ATS compatibility.
+- To provide real-time feedback and actionable recommendations for improvement.
+- To generate a compatibility score and identify missing keywords/skills.
+- To offer an intuitive interface for non-technical users.
+
+Scope:
+- PDF resume text extraction and analysis.
+- Job description compatibility scoring.
+- Missing keyword identification and improvement suggestions.
+- Multi-page web interface with session management.
+- Real-time analysis and visualization.
+
+Out of Scope:
+- Resume formatting/template generation.
+- Batch processing and user account management.
+- Direct integration with external ATS systems.
+
+-------------------------------------------------------------------------------
+4. METHODOLOGY
+==============
+- User uploads a PDF resume and enters a job description via the web interface.
+- The system extracts text from the PDF using PyPDF2.
+- Text is preprocessed and formatted into a prompt for AI analysis.
+- Google Generative AI analyzes the prompt and returns a structured JSON response.
+- The system parses the response, calculates a compatibility score, and identifies missing keywords.
+- Results and recommendations are displayed interactively to the user.
+- Session state is used for persistent navigation and data sharing between pages.
+- Error handling and validation are implemented at each stage.
+
+-------------------------------------------------------------------------------
+5. HARDWARE & SOFTWARE TO BE USED
+=================================
+
+Hardware:
+- Standard PC/Laptop with Intel i5 or equivalent processor
+- 8GB RAM minimum (16GB recommended)
+- 500MB free storage
+- Stable internet connection
+
+Software:
+- Operating System: Windows 10/macOS/Linux
+- Python 3.9 or higher
+- Streamlit (web framework)
+- PyPDF2 (PDF processing)
+- google-generativeai (AI integration)
+- python-dotenv (environment management)
+- Web browser: Chrome/Firefox/Safari (latest)
+- Git (version control)
+
+-------------------------------------------------------------------------------
+6. APPLICATION AND FUTURE SCOPE OF THE PROJECT
+==============================================
+
+Applications:
+- Resume optimization for job seekers
+- Career counseling and placement cell support
+- HR consulting and recruitment agencies
+- Educational institution career centers
+
+Future Scope:
+- Multi-user support and authentication
+- Database integration for analytics and history
+- Support for additional file formats (DOCX, TXT)
+- Batch processing and bulk analysis
+- Advanced analytics dashboard and reporting
+- Mobile application development
+- Integration with job boards and ATS platforms
+- Machine learning model training for improved accuracy
+
+-------------------------------------------------------------------------------
+7. PROJECT TIMELINE (GANTT CHART / PERT CHART)
+==============================================
+
+| Week | Task                                      |
+|------|-------------------------------------------|
+| 1-2  | Requirements Analysis & System Design     |
+| 3-4  | Core Algorithm Development & Testing      |
+| 5-6  | Web Interface Development & Integration   |
+| 7-8  | AI Service Integration & Optimization     |
+| 9    | Testing & Debugging                       |
+| 10   | Documentation & Final Deployment          |
+
+(Gantt/PERT chart to be drawn as per institutional format if required)
+
+-------------------------------------------------------------------------------
+8. REFERENCES / BIBLIOGRAPHY
+============================
+1. McKinney, W. (2022). Python for Data Analysis. O'Reilly Media.
+2. Raschka, S. & Mirjalili, V. (2019). Python Machine Learning. Packt Publishing.
+3. Streamlit Documentation. (2024). https://docs.streamlit.io/
+4. Google AI Documentation. (2024). https://ai.google.dev/
+5. "Automated Resume Screening Using Machine Learning" - IEEE Transactions (2023)
+6. Clean Code: A Handbook of Agile Software Craftsmanship (Martin, R.C., 2008)
+
+===============================================================================
+                                 END OF SYNOPSIS
+=============================================================================== 
