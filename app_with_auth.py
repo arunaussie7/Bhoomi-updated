@@ -114,6 +114,8 @@ def show_main_application():
     page = st.sidebar.radio("Navigation", [
         "Resume Analysis", 
         "Analysis Results", 
+        "Advanced Analysis",
+        "Resume Templates",
         "Resume Improvement Tips", 
         "Detailed Improvement Plan",
         "User Profile"
@@ -138,6 +140,12 @@ def show_main_application():
 
     if 'detailed_improvement_plan' not in st.session_state:
         st.session_state.detailed_improvement_plan = None
+    
+    if 'job_description' not in st.session_state:
+        st.session_state.job_description = ''
+    
+    if 'resume_text' not in st.session_state:
+        st.session_state.resume_text = ''
 
     if page == "Resume Analysis":
         st.title("Smart Application Tracking System")
@@ -151,6 +159,10 @@ def show_main_application():
         if submit:
             if uploaded_file is not None:
                 text = input_pdf_text(uploaded_file)
+                # Store resume text and job description in session state
+                st.session_state.resume_text = text
+                st.session_state.job_description = jd
+                
                 formatted_prompt = input_prompt.format(text=text, jd=jd)
                 response = get_cohere_response(formatted_prompt)
                 
@@ -274,6 +286,88 @@ def show_main_application():
             st.markdown("---")
             if st.button("📝 Resume Improvement Tips", type="primary"):
                 st.success("Navigate to 'Resume Improvement Tips' to get personalized suggestions!")
+
+    elif page == "Advanced Analysis":
+        from advanced_analysis import show_advanced_analysis_page
+        show_advanced_analysis_page()
+
+    elif page == "Resume Templates":
+        st.title("📝 Professional Resume Templates")
+        st.markdown("Choose from industry-specific, ATS-optimized resume templates.")
+        
+        from resume_templates import ResumeTemplates
+        template_manager = ResumeTemplates()
+        
+        # Show template selector
+        template_content, template_key = template_manager.show_template_selector()
+        
+        # Additional template features
+        st.markdown("---")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.subheader("📊 Template Statistics")
+            st.info(f"""
+            **Selected Template**: {template_key.title()}
+            **ATS Compatibility**: ✅ Optimized
+            **Industry Focus**: {template_key.title()}
+            **Best For**: {template_key.replace('_', ' ').title()} roles
+            """)
+        
+        with col2:
+            st.subheader("🎯 Quick Actions")
+            if st.button("📋 Use This Template"):
+                st.success("Template ready! Copy the content above and customize it with your information.")
+            
+            if st.button("🔄 Try Another Template"):
+                st.rerun()
+        
+        # Template customization tips
+        st.markdown("---")
+        st.subheader("💡 Template Customization Tips")
+        
+        tips = {
+            'professional': [
+                "Use action verbs to start each bullet point",
+                "Include quantifiable achievements with numbers",
+                "Keep formatting consistent and clean",
+                "Use standard section headers for ATS compatibility",
+                "Tailor content to match job requirements"
+            ],
+            'technical': [
+                "List technologies with proficiency levels",
+                "Include specific project details and results",
+                "Highlight technical achievements and innovations",
+                "Use industry-standard terminology",
+                "Include links to GitHub, portfolio, or demos"
+            ],
+            'executive': [
+                "Focus on leadership and strategic achievements",
+                "Include quantifiable business impact",
+                "Highlight team management and budget responsibility",
+                "Emphasize financial and operational results",
+                "Include board memberships and professional affiliations"
+            ],
+            'entry_level': [
+                "Emphasize relevant coursework and academic projects",
+                "Include internships, volunteer work, and part-time jobs",
+                "Highlight transferable skills and achievements",
+                "Show enthusiasm and motivation for the role",
+                "Include academic achievements if strong (GPA, honors)"
+            ],
+            'creative': [
+                "Include portfolio links and creative samples",
+                "Highlight creative achievements and client work",
+                "Show range of creative skills and disciplines",
+                "Include specific projects with results",
+                "Emphasize innovation and creative problem-solving"
+            ]
+        }
+        
+        template_tips = tips.get(template_key, tips['professional'])
+        for i, tip in enumerate(template_tips, 1):
+            st.markdown(f"{i}. {tip}")
 
     elif page == "Resume Improvement Tips":
         st.title("Resume Improvement Tips")
